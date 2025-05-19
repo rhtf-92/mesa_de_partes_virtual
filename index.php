@@ -1,29 +1,24 @@
-﻿<!doctype html>
-<html lang="en">
-
+<!doctype html>
+<html lang="es">
     <head>
-
         <meta charset="utf-8">
-        <title>Login | Minia - Minimal Admin & Dashboard Template</title>
+        <title>Acceso | DSI - Mesa de Partes</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description">
         <meta content="Themesbrand" name="author">
-
         <!-- preloader css -->
-        <link rel="stylesheet" href="static/css/preloader.min-1.css" type="text/css">
-
+        <link rel="stylesheet" href="assets/css/preloader.min-1.css" type="text/css">
         <!-- Bootstrap Css -->
-        <link href="static/css/bootstrap.min-1.css" id="bootstrap-style" rel="stylesheet" type="text/css">
+        <link href="assets/css/bootstrap.min-1.css" id="bootstrap-style" rel="stylesheet" type="text/css">
         <!-- Icons Css -->
-        <link href="static/css/icons.min-1.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/icons.min-1.css" rel="stylesheet" type="text/css">
         <!-- App Css-->
-        <link href="static/css/app.min-1.css" id="app-style" rel="stylesheet" type="text/css">
-
+        <link href="assets/css/app.min-1.css" id="app-style" rel="stylesheet" type="text/css">
     </head>
 
     <body>
 
-    <!-- <body data-layout="horizontal"> -->
+        <!-- <body data-layout="horizontal"> -->
         <div class="auth-page">
             <div class="container-fluid p-0">
                 <div class="row g-0">
@@ -33,33 +28,70 @@
                                 <div class="d-flex flex-column h-100">
                                     <div class="mb-4 mb-md-5 text-center">
                                         <a href="index-1.html" class="d-block auth-logo">
-                                            <img src="static/picture/logo-sm-1.svg" alt="" height="28"> <span class="logo-txt">Minia</span>
+                                            <img src="assets/picture/logo-sm-1.png" alt="" height="150"> <span class="logo-txt">DSI - IESTP SUISA</span>
                                         </a>
                                     </div>
                                     <div class="auth-content my-auto">
                                         <div class="text-center">
-                                            <h5 class="mb-0">Welcome Back !</h5>
-                                            <p class="text-muted mt-2">Sign in to continue to Minia.</p>
+                                            <h3 class="mb-0">Mesa de Partes</h3>
+                                            <p class="text-muted mt-2">Ingrese sus credenciales.</p>
                                         </div>
-                                        <form class="custom-form mt-4 pt-2">
+                                        <form class="custom-form mt-4 pt-2" action="" method="post">
+
+                                            <?php
+                                                if(isset($_GET["m"])){
+                                                    switch($_GET["m"]){
+                                                        case "1":
+                                                            ?>
+                                                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                                    <i class="mdi mdi-block-helper me-2"></i>
+                                                                    Correo Electronico no encontrado.
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                                </div>
+                                                            <?php
+                                                            break;
+
+                                                        case "2":
+                                                            ?>
+                                                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                                    <i class="mdi mdi-block-helper me-2"></i>
+                                                                    Campos Vacios.
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                                </div>
+                                                            <?php
+                                                            break;
+
+                                                        case "3":
+                                                            ?>
+                                                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                                    <i class="mdi mdi-block-helper me-2"></i>
+                                                                    Contraseña Incorrecta.
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                                </div>
+                                                            <?php
+                                                            break;
+                                                    }
+                                                }
+                                            ?>
+
                                             <div class="mb-3">
-                                                <label class="form-label">Username</label>
-                                                <input type="text" class="form-control" id="username" placeholder="Enter username">
+                                                <label class="form-label">Correo Electronico</label>
+                                                <input type="email" class="form-control" id="usu_correo" name="usu_correo" placeholder="Ingrese Correo Electronico" required>
                                             </div>
                                             <div class="mb-3">
                                                 <div class="d-flex align-items-start">
                                                     <div class="flex-grow-1">
-                                                        <label class="form-label">Password</label>
+                                                        <label class="form-label">Contraseña</label>
                                                     </div>
                                                     <div class="flex-shrink-0">
                                                         <div class="">
-                                                            <a href="auth-recoverpw-1.html" class="text-muted">Forgot password?</a>
+                                                            <a href="view/recuperar/index.php" class="text-muted">Olvidaste tu contraseña?</a>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                
+
                                                 <div class="input-group auth-pass-inputgroup">
-                                                    <input type="password" class="form-control" placeholder="Enter password" aria-label="Password" aria-describedby="password-addon">
+                                                    <input type="password" class="form-control" id="usu_pass" name="usu_pass" placeholder="Ingrese Contraseña" aria-label="Password" aria-describedby="password-addon" required>
                                                     <button class="btn btn-light shadow-none ms-0" type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
                                                 </div>
                                             </div>
@@ -68,47 +100,59 @@
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="checkbox" id="remember-check">
                                                         <label class="form-check-label" for="remember-check">
-                                                            Remember me
+                                                            Recuerdame
                                                         </label>
-                                                    </div>  
+                                                    </div>
                                                 </div>
-                                                
+
                                             </div>
                                             <div class="mb-3">
-                                                <button class="btn btn-primary w-100 waves-effect waves-light" type="submit">Log In</button>
+                                                <input type="hidden" name="enviar" value="si">
+                                                <button class="btn btn-primary w-100 waves-effect waves-light" type="submit">Acceder</button>
                                             </div>
                                         </form>
 
-                                        <div class="mt-4 pt-2 text-center">
+                                        
+                                        <!-- <div class="mt-4 pt-2 text-center">
                                             <div class="signin-other-title">
-                                                <h5 class="font-size-14 mb-3 text-muted fw-medium">- Sign in with -</h5>
+                                                <h5 class="font-size-14 mb-3 text-muted fw-medium">- Acceder con -</h5>
                                             </div>
 
                                             <ul class="list-inline mb-0">
+
                                                 <li class="list-inline-item">
-                                                    <a href="javascript:void()" class="social-list-item bg-primary text-white border-primary">
-                                                        <i class="mdi mdi-facebook"></i>
-                                                    </a>
+
+                                                    /**TODO: Botón "Iniciar sesión con Google" con atributos de datos HTML para la API */
+                                                    <div id="g_id_onload"
+                                                        data-client_id="592225408682-0k7df94bqpucikiovudb27idooij9slm.apps.googleusercontent.com"
+                                                        data-context="signin"
+                                                        data-ux_mode="popup"
+                                                        data-callback="handleCredentialResponse"
+                                                        data-auto_prompt="false"
+                                                    >
+                                                    </div>
+
+                                                    /**TODO: Configuración del botón de inicio de sesión con Google */
+                                                    <div class="g_id_signin"
+                                                        data-type="standard"
+                                                        data-shape="rectangular"
+                                                        data-theme="outline"
+                                                        data-text="signin_with"
+                                                        data-size="large"
+                                                        data-logo_alignment="left"
+                                                    ></div>
+
                                                 </li>
-                                                <li class="list-inline-item">
-                                                    <a href="javascript:void()" class="social-list-item bg-info text-white border-info">
-                                                        <i class="mdi mdi-twitter"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="javascript:void()" class="social-list-item bg-danger text-white border-danger">
-                                                        <i class="mdi mdi-google"></i>
-                                                    </a>
-                                                </li>
+
                                             </ul>
-                                        </div>
+                                        </div> -->
 
                                         <div class="mt-5 text-center">
-                                            <p class="text-muted mb-0">Don't have an account ? <a href="auth-register-1.html" class="text-primary fw-semibold"> Signup now </a> </p>
+                                            <p class="text-muted mb-0">No tienes cuenta? <a href="view/registro/" class="text-primary fw-semibold"> Registrate </a> </p>
                                         </div>
                                     </div>
                                     <div class="mt-4 mt-md-5 text-center">
-                                        <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> Minia   . Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand</p>
+                                        <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> DSI_Lover´s <i class="mdi mdi-heart text-danger"></i> Unidad de Innovación Tecnológica</p>
                                     </div>
                                 </div>
                             </div>
@@ -157,7 +201,7 @@
                                                         <div class="mt-4 pt-3 pb-5">
                                                             <div class="d-flex align-items-start">
                                                                 <div class="flex-shrink-0">
-                                                                    <img src="static/picture/avatar-1-1.jpg" class="avatar-md img-fluid rounded-circle" alt="...">
+                                                                    <img src="assets/picture/avatar-1-1.jpg" class="avatar-md img-fluid rounded-circle" alt="...">
                                                                 </div>
                                                                 <div class="flex-grow-1 ms-3 mb-4">
                                                                     <h5 class="font-size-18 text-white">Richard Drews
@@ -182,7 +226,7 @@
                                                         <div class="mt-4 pt-3 pb-5">
                                                             <div class="d-flex align-items-start">
                                                                 <div class="flex-shrink-0">
-                                                                    <img src="static/picture/avatar-2-1.jpg" class="avatar-md img-fluid rounded-circle" alt="...">
+                                                                    <img src="assets/picture/avatar-2-1.jpg" class="avatar-md img-fluid rounded-circle" alt="...">
                                                                 </div>
                                                                 <div class="flex-grow-1 ms-3 mb-4">
                                                                     <h5 class="font-size-18 text-white">Rosanna French
@@ -206,7 +250,7 @@
                                                             feel.”</h4>
                                                         <div class="mt-4 pt-3 pb-5">
                                                             <div class="d-flex align-items-start">
-                                                                <img src="static/picture/avatar-3-1.jpg" class="avatar-md img-fluid rounded-circle" alt="...">
+                                                                <img src="assets/picture/avatar-3-1.jpg" class="avatar-md img-fluid rounded-circle" alt="...">
                                                                 <div class="flex-1 ms-3 mb-4">
                                                                     <h5 class="font-size-18 text-white">Ilse R. Eaton</h5>
                                                                     <p class="mb-0 text-white-50">Manager
@@ -232,19 +276,21 @@
             <!-- end container fluid -->
         </div>
 
-
         <!-- JAVASCRIPT -->
-        <script src="static/js/jquery.min-1.js"></script>
-        <script src="static/js/bootstrap.bundle.min-1.js"></script>
-        <script src="static/js/metisMenu.min-1.js"></script>
-        <script src="static/js/simplebar.min-1.js"></script>
-        <script src="static/js/waves.min-1.js"></script>
-        <script src="static/js/feather.min-1.js"></script>
+        <script src="assets/js/jquery.min-1.js"></script>
+        <script src="assets/js/bootstrap.bundle.min-1.js"></script>
+        <script src="assets/js/metisMenu.min-1.js"></script>
+        <script src="assets/js/simplebar.min-1.js"></script>
+        <script src="assets/js/waves.min.js"></script>
+        <script src="assets/js/feather.min-1.js"></script>
         <!-- pace js -->
-        <script src="static/js/pace.min-1.js"></script>
+        <script src="assets/js/pace.min-1.js"></script>
         <!-- password addon init -->
-        <script src="static/js/pass-addon.init-1.js"></script>
+        <script src="assets/js/pass-addon.init-1.js"></script>
+        <!--TODO: Script para cargar la API de Google Sign-In de manera asíncrona -->
+        <script src="https://accounts.google.com/gsi/client" async></script>
 
+        <script type="text/javascript" src="acceso.js"></script>
     </body>
 
 </html>
