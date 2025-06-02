@@ -2,11 +2,10 @@
 <html lang="es">
 
     <head>
-
         <meta charset="utf-8">
         <title>Acceso | DSI - Mesa de Partes</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description">
+        <meta content="Sistema de Mesa de Partes Virtual - P.E. Desarrollo de Sistemas de Informacion _ IESTP SUISA" name="description">
         <meta content="Themesbrand" name="author">
         <!-- preloader css -->
         <link rel="stylesheet" href="../../assets/css/preloader.min-1.css" type="text/css">
@@ -16,7 +15,6 @@
         <link href="../../assets/css/icons.min-1.css" rel="stylesheet" type="text/css">
         <!-- App Css-->
         <link href="../../assets/css/app.min-1.css" id="app-style" rel="stylesheet" type="text/css">
-
     </head>
 
     <body>
@@ -30,30 +28,30 @@
                             <div class="w-100">
                                 <div class="d-flex flex-column h-100">
                                     <div class="mb-4 mb-md-5 text-center">
-                                        <a href="index.html" class="d-block auth-logo">
+                                        <a href="../../" class="d-block auth-logo">
                                             <img src="../../assets/picture/logo-sm-1.png" alt="" height="100"> <span class="logo-txt">DSI - IESTP SUISA</span>
                                         </a>
                                     </div>
                                     <div class="auth-content my-auto">
                                         <div class="text-center">
-                                            <h5 class="mb-0">Registrar cuenta</h5>
-                                            <p class="text-muted mt-2">Registre sus datos llenando el formulario.</p>
+                                            <h5 class="mb-0">Registrar Cuenta</h5>
+                                            <p class="text-muted mt-2">Llene el formulario para registrar sus datos.</p>
                                         </div>
-                                        <form class="needs-validation custom-form mt-4 pt-2" novalidate="" action="index.html">
-                                            <div class="mb-3">
-                                                <label for="useremail" class="form-label">CORREO ELECTÓNICO:</label>
-                                                <input type="email" class="form-control" id="useremail" placeholder="Ingrese su correo electrónico" required="">  
-                                                <div class="invalid-feedback">
-                                                    Falta correo electrónico
-                                                </div>      
-                                            </div>
-
+                                        <form class="needs-validation custom-form mt-4 pt-2" novalidate="" action="index.html">                            
                                             <div class="mb-3">
                                                 <label for="username" class="form-label">NOMBRES Y APELLIDOS:</label>
                                                 <input type="text" class="form-control" id="username" placeholder="Ingrese sus Nombres" required="">
                                                 <div class="invalid-feedback">
                                                     Falta Nombres
                                                 </div>  
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="useremail" class="form-label">CORREO ELECTÓNICO:</label>
+                                                <input type="email" class="form-control" id="useremail" placeholder="Ingrese su correo electrónico" required="">  
+                                                <div class="invalid-feedback">
+                                                    Falta correo electrónico
+                                                </div>      
                                             </div>
                     
                                             <div class="mb-3">

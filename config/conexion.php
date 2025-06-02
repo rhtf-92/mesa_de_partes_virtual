@@ -3,7 +3,7 @@
         
         protected $dbh;
 
-        protected function Conexion(){
+        protected function conexion(){
             try{
                 $conectar = $this->dbh = new PDO("mysql:local=localhost; dbname=mesadepartes","soporte","HeH8jI6aMi");
             }catch(Exception $e){
@@ -13,11 +13,11 @@
         }
 
         public function set_names(){
-
+            return $this->$dbh->query("SET NAMES 'utf8'");
         }
         
         public static function ruta(){
-
+            return "http://mesa_de_partes_virtual.test/";
         }
     }
 
