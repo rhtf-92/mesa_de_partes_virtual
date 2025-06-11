@@ -35,46 +35,38 @@
                                     <div class="auth-content my-auto">
                                         <div class="text-center">
                                             <h5 class="mb-0">Registrar Cuenta</h5>
-                                            <p class="text-muted mt-2">Llene el formulario para registrar sus datos.</p>
+                                            <p class="text-muted mt-2">Llene el formulario para registrar su cuenta.</p>
                                         </div>
-                                        <form class="needs-validation custom-form mt-4 pt-2" novalidate="" action="index.html">                            
+                                        <form id="formRegistro" class="needs-validation custom-form mt-4 pt-2" novalidate="" action="index.html">                            
                                             <div class="mb-3">
-                                                <label for="username" class="form-label">NOMBRES Y APELLIDOS:</label>
-                                                <input type="text" class="form-control" id="username" placeholder="Ingrese sus Nombres" required="">
-                                                <div class="invalid-feedback">
-                                                    Falta Nombres
-                                                </div>  
+                                                <label for="nomb_y_apell" class="form-label">NOMBRES Y APELLIDOS:</label>
+                                                <input type="text" class="form-control" id="nomb_y_apell" name="nomb_y_apell" placeholder="Ingrese sus Nombres" required="">
+                                                <div class="validation-error text-danger"></div>  
                                             </div>
 
                                             <div class="mb-3">
-                                                <label for="useremail" class="form-label">CORREO ELECTÓNICO:</label>
-                                                <input type="email" class="form-control" id="useremail" placeholder="Ingrese su correo electrónico" required="">  
-                                                <div class="invalid-feedback">
-                                                    Falta correo electrónico
-                                                </div>      
+                                                <label for="email" class="form-label">CORREO ELECTÓNICO:</label>
+                                                <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese su correo electrónico" required="">
+                                                <div class="validation-error text-danger"></div>
                                             </div>
                     
                                             <div class="mb-3">
-                                                <label for="userpassword" class="form-label">CONTRASEÑA:</label>
-                                                <input type="password" class="form-control" id="userpassword" placeholder="Ingrese su contraseña" required="">
-                                                <div class="invalid-feedback">
-                                                    Falta contraseña
-                                                </div>       
+                                                <label for="contrasenia" class="form-label">CONTRASEÑA:</label>
+                                                <input type="password" class="form-control" id="contrasenia" name="contrasenia" placeholder="Ingrese su contraseña" required="">
+                                                <div class="validation-error text-danger"></div>
                                             </div>
 
                                             <div class="mb-3">
-                                                <label for="userpassword" class="form-label">CONFIRMAR CONTRASEÑA:</label>
-                                                <input type="password" class="form-control" id="userpassword" placeholder="Confirme su contraseña" required="">
-                                                <div class="invalid-feedback">
-                                                    Falta confirmar contraseña
-                                                </div>       
+                                                <label for="pswd_confirm" class="form-label">CONFIRMAR CONTRASEÑA:</label>
+                                                <input type="password" class="form-control" id="pswd_confirm" name="pswd_confirm" placeholder="Confirme su contraseña" required="">
+                                                <div class="validation-error text-danger"></div>
                                             </div>
 
                                             <div class="mb-4">
                                                 <p class="mb-0">Al registrarse Ud. acepta los <a href="#" class="text-primary"><strong>Términos y Condiciones</strong></a></p>
                                             </div>
                                             <div class="mb-3">
-                                                <button class="btn btn-primary w-100 waves-effect waves-light" type="submit">Registrarse</button>
+                                                <button class="btn btn-primary w-100 waves-effect waves-light" type="submit" id="submit" name="submit" >Registrar</button>
                                             </div>
                                         </form>
 
@@ -246,7 +238,10 @@
         <script src="../../assets/js/pace.min.js"></script>
 
         <!-- validation init -->
-        <script src="../../assets/js/validation.init.js"></script>
+        <!-- <script src="../../assets/js/validation.init.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.6.0/validator.min.js"></script>
+        <!-- AGREGAMOS EL SCRIPT DE view/registo/registro.js -->
+        <script type="text/javascript" src="registro.js"></script>
 
     </body>
 
