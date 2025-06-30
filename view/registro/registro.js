@@ -29,13 +29,27 @@ function validateEmail(){
     return isValid;
 }
 
-// Valida que un campo de texto no esté vacío y muestra mensaje de error si es necesario
+// Valida que un campo de texto no esté vacío y muestra mensaje de error si es necesario - IMPLEMENTAR que no se pueda ingresar digitos numericos.
 function validateText(fieldId){
     var value = $("#" + fieldId).val();
-    var isValid = validator.isLength(value, { min: 1 });
-    //muestra el mensaje de error si la validacion no es exitosa
-    displayErrorMessage("#" + fieldId, isValid, "Este campo es obligatorio");
+    // Valida que el campo no esté vacío y que no contenga dígitos numéricos
+    var isNotEmpty = validator.isLength(value, { min: 1 });
+    var hasNoDigits = !/[0-9]/.test(value);
+    var isValid = isNotEmpty && hasNoDigits;
+    // Mensaje personalizado según el error
+    var message = !isNotEmpty ? "Este campo es obligatorio" : (!hasNoDigits ? "No se permiten números" : "");
+    displayErrorMessage("#" + fieldId, isValid, message);
+    return isValid;
+}
 
+// Valida que la contraseña tenga al menos 8 caracteres y muestra mensaje de error si no cumple
+function validatePassword(){
+    var password = $("#contrasenia").val();
+    //usa Validator.js de CLOUDFLARE para validar la contraseña. Valida que la contraseña tenga al menos 8 caracteres.
+    var isValid = validator.isLength(password, { min: 8 });
+    //muestra el mensaje de error si la validacion no es exitosa
+    displayErrorMessage("#contrasenia", isValid, "La contraseña debe tener al menos 8 caracteres.");
+    //retorna el resultado de la validacion
     return isValid;
 }
 
@@ -47,17 +61,6 @@ function validatePasswordMatch(){
     var isValid = validator.equals(contraseña, confirmPassword);
     //muestra el mensaje de error si la validacion no es exitosa
     displayErrorMessage("#pswd_confirm", isValid, "Las contraseñas no coinciden.");
-    //retorna el resultado de la validacion
-    return isValid;
-}
-
-// Valida que la contraseña tenga al menos 8 caracteres y muestra mensaje de error si no cumple
-function validatePassword(){
-    var password = $("#contrasenia").val();
-    //usa Validator.js de CLOUDFLARE para validar la contraseña. Valida que la contraseña tenga al menos 8 caracteres.
-    var isValid = validator.isLength(password, { min: 8 });
-    //muestra el mensaje de error si la validacion no es exitosa
-    displayErrorMessage("#contrasenia", isValid, "La contraseña debe tener al menos 8 caracteres.");
     //retorna el resultado de la validacion
     return isValid;
 }
