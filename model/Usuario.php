@@ -11,5 +11,15 @@
             $sql->bindValue(3, $contrasenia);
             $sql->execute();
         }
+
+        public function get_usuario_correo($email){
+            $conectar=parent::conexion();
+            parent::set_names();
+            $sql="SELECT * FROM usuario WHERE email=?";
+            $sql = $conectar->prepare($sql);
+            $sql->bindValue(1, $email);
+            $sql->execute();
+            return $sql->fetchAll();
+        }
     }
 ?>

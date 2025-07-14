@@ -96,10 +96,9 @@ function registrar(){
         contentType: false,
         processData: false,
         success: function(datos){
-            console.log("Almacenado!"+datos);
+            console.log(datos);
         }
     });
 }
-
 // Inicializa el script al cargar la página
 init();

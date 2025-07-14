@@ -6,7 +6,13 @@
     
     switch($_GET["op"]){
         case "registrar":
-            $usuario->registrar_usuario($_POST["nomb_y_apell"], $_POST["email"], $_POST["contrasenia"]);
+            $datos = $usuario->get_usuario_correo($_POST["email"]);
+            if(is_array($datos) == true && count($datos) == 0){
+                $usuario->registrar_usuario($_POST["nomb_y_apell"], $_POST["email"], $_POST["contrasenia"]);
+                echo "Registrado";
+            } else {
+                echo "Correo Existente. Intente con otro correo.";
+            }
             break;
     }
 ?>

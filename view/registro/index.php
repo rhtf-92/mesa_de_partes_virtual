@@ -15,6 +15,9 @@
         <link href="../../assets/css/icons.min-1.css" rel="stylesheet" type="text/css">
         <!-- App Css-->
         <link href="../../assets/css/app.min-1.css" id="app-style" rel="stylesheet" type="text/css">
+        <!-- AlertifyJS CSS -->
+        <link rel="stylesheet" href="../../assets/css/alertify.min.css"/>
+        <link rel="stylesheet" href="../../assets/css/default.min.css"/>
     </head>
 
     <body>
@@ -240,6 +243,8 @@
         <!-- validation init -->
         <!-- <script src="../../assets/js/validation.init.js"></script> -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.6.0/validator.min.js"></script>
+        <!-- AlertifyJS JS -->
+        <script src="../../assets/js/alertify.min.js"></script>
         <!-- AGREGAMOS EL SCRIPT DE view/registo/registro.js -->
         <script type="text/javascript" src="registro.js"></script>
 
